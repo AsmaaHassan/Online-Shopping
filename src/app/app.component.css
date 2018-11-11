@@ -1,0 +1,17 @@
+.percentage-span{
+  border: 2px solid #f68b1e;
+  color: #f68b1e;
+  float: right;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 700;
+  padding: 3px 4px;
+  margin-left: 10px;
+}
+.card-header{
+  text-align: center;
+}
+
+.row{
+  margin: 15px;
+}

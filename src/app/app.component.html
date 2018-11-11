@@ -1,0 +1,51 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container">
+<div class="card">
+  <div class="row">
+    <div class="col-md-6">
+       <input class="form-control" type="text" name="NameAR" [(ngModel)]="searchQuery">
+    </div>
+    <div class="col-md-2">
+      <button class="form-control" (click)="searchProduct()">Search</button>
+    </div>
+    <div class="col-md-2">
+      <input type="checkbox" class="form-control" [(ngModel)]="is_souqFilter" (change)="doFiltering()">Souq
+      <input type="checkbox" class="form-control" [(ngModel)]="is_jumiaFilter" (change)="doFiltering()">Jumia
+    </div>
+  </div>
+</div>
+</div>
+<div class="container" *ngIf="deals.length>0">
+  <div class="row">
+    <div class="col-md-12 mt-3">
+      <div class="app flex-row align-items-center">
+        <div class="card-deck row">
+          <div class="col-md-4" *ngFor="let deal of deals; let i = index ">
+            <div class="card">
+              <div class="card-header">
+                <img src="{{deal.deal_image_url}}" alt="Deal" width="100px" height="100px">
+              </div>
+              <div class="card-body">
+                <span>{{deal.web_source}}</span>
+                <span>{{deal.deal_title}}</span>
+                <span class="percentage-span">-{{deal.deal_percentage}}% OFF</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="mx-auto pagination-center">
+    <pagination [totalItems]="totalItems" [maxSize]="5" (pageChanged)="pageChanged($event)" class="pagination-sm"
+                [boundaryLinks]="true" [itemsPerPage]="itemsPerPage" [rotate]="false"></pagination>
+  </div>
+</div>
+
+
+
