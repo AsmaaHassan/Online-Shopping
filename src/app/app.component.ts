@@ -17,7 +17,6 @@ export class AppComponent {
   is_jumiaFilter: boolean = false;
   constructor(public scrapyItemservice: ScrapyItemsService)
   {
-    // this.filters.push({param:'id', value:'2'});
     this.getItems();
   }
 
@@ -28,7 +27,6 @@ export class AppComponent {
 
   getItems(){
     this.scrapyItemservice.getItems(this.currentPage, this.itemsPerPage, this.searchQuery, this.filters).subscribe( data =>{
-      console.log(data);
       // @ts-ignore
       this.deals = data.results;
       this.totalItems = data['count'];

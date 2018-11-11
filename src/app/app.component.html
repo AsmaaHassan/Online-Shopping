@@ -1,5 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
 <div class="container">
 <div class="card">
   <div class="row">
@@ -40,11 +38,11 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="mx-auto pagination-center">
-    <pagination [totalItems]="totalItems" [maxSize]="5" (pageChanged)="pageChanged($event)" class="pagination-sm"
+<div class="container pagination">
+  <!--<div class="mx-auto pagination-center">-->
+    <pagination [totalItems]="totalItems" [(ngModel)]="currentPage" [maxSize]="5" (pageChanged)="pageChanged($event)" class="pagination-sm"
                 [boundaryLinks]="true" [itemsPerPage]="itemsPerPage" [rotate]="false"></pagination>
-  </div>
+  <!--</div>-->
 </div>
 
 
