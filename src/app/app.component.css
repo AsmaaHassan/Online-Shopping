@@ -23,3 +23,16 @@
 .pagination{
   padding-left: 30%;
 }
+
+.web_source{
+  color: blue;
+}
+
+.container{
+  margin-top: 10px;
+}
+button{
+  cursor: pointer;
+  background-color: #f68b1e;
+  color: white;
+}

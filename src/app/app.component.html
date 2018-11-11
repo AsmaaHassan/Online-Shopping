@@ -1,18 +1,23 @@
 <div class="container">
-<div class="card">
-  <div class="row">
-    <div class="col-md-6">
-       <input class="form-control" type="text" name="NameAR" [(ngModel)]="searchQuery">
-    </div>
-    <div class="col-md-2">
-      <button class="form-control" (click)="searchProduct()">Search</button>
-    </div>
-    <div class="col-md-2">
-      <input type="checkbox" class="form-control" [(ngModel)]="is_souqFilter" (change)="doFiltering()">Souq
-      <input type="checkbox" class="form-control" [(ngModel)]="is_jumiaFilter" (change)="doFiltering()">Jumia
+  <div class="card">
+    <div class="row">
+      <div class="col-md-4">
+         <input class="form-control" type="text" name="NameAR" [(ngModel)]="searchQuery">
+      </div>
+      <div class="col-md-2">
+        <button class="form-control" (click)="searchProduct()">Search</button>
+      </div>
+      <div class="col-md-2">
+        <input type="checkbox" [(ngModel)]="is_souqFilter" (change)="doFiltering()" ><span>Souq</span><br>
+        <input type="checkbox" [(ngModel)]="is_jumiaFilter" (change)="doFiltering()">Jumia
+      </div>
+      <div class="col-md-4">
+        <input type="date" class="form-control" name="DateFrom"
+               [(ngModel)]="selectedDate"
+               (change)="doFiltering()">
+      </div>
     </div>
   </div>
-</div>
 </div>
 <div class="container" *ngIf="deals.length>0">
   <div class="row">
@@ -25,7 +30,7 @@
                 <img src="{{deal.deal_image_url}}" alt="Deal" width="100px" height="100px">
               </div>
               <div class="card-body">
-                <span>{{deal.web_source}}</span>
+                <span class="web_source">{{deal.web_source}}</span><br>
                 <span>{{deal.deal_title}}</span>
                 <span class="percentage-span">-{{deal.deal_percentage}}% OFF</span>
               </div>

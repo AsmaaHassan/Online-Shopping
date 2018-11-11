@@ -12,9 +12,11 @@ export class AppComponent {
   currentPage = 1;
   totalItems: number;
   itemsPerPage = 9;
-  public searchQuery: string = "";
-  is_souqFilter: boolean = false;
-  is_jumiaFilter: boolean = false;
+  public searchQuery = "";
+  is_souqFilter = false;
+  is_jumiaFilter = false;
+  selectedDate: any;
+
   constructor(public scrapyItemservice: ScrapyItemsService)
   {
     this.getItems();
@@ -40,6 +42,8 @@ export class AppComponent {
       this.filters.push({param:'web_source', value:'souq'});
     if(this.is_jumiaFilter && ! this.is_souqFilter)
       this.filters.push({param:'web_source', value:'jumia'});
+    if(this.selectedDate != '')
+      this.filters.push({param: 'date', value: this.selectedDate});
     this.getItems();
 
   }
