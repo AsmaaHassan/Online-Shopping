@@ -42,8 +42,9 @@ export class AppComponent {
       this.filters.push({param:'web_source', value:'souq'});
     if(this.is_jumiaFilter && ! this.is_souqFilter)
       this.filters.push({param:'web_source', value:'jumia'});
-    if(this.selectedDate != '')
+    if(this.selectedDate && this.selectedDate != '')
       this.filters.push({param: 'date', value: this.selectedDate});
+
     this.getItems();
 
   }
